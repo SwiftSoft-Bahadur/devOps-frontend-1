@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Checkout your Angular app source code from version control
                 // Example for Git:
-                git branch: 'main', url: 'https://github.com/your/angular-app-repo.git'
+                git branch: 'master', url: 'https://github.com/SwiftSoft-Bahadur/devOps-frontend-1.git'
             }
         }
 
@@ -14,7 +14,7 @@ pipeline {
             steps {
                 // Install Node.js and npm (if not already installed)
                 sh 'curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -'
-                sh 'sudo apt-get install -y nodejs'
+                sh 'sudo yum install -y nodejs'
 
                 // Install Angular CLI globally
                 sh 'npm install -g @angular/cli'
@@ -27,7 +27,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build your Angular app
-                sh 'ng build --prod'
+                sh 'ng build'
             }
         }
 
