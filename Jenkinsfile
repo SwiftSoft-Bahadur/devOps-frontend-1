@@ -1,4 +1,5 @@
 pipeline {
+    agent any
     agent {
         docker {
             image 'node:14' // Use a Node.js image with the desired version
